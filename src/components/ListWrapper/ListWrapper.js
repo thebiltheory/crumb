@@ -1,19 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ListItem from '../ListItem/ListItem';
-import CrumbProvider, { CrumbConsumer } from '../CrumbProvider/CrumbProvider';
+import WithCrumbContext from '../WithCrumbContext/WithCrumbContext';
+import { CrumbContext } from '../../App';
 
-export default class ListWrapper extends Component {
-  render() {
-    return (
-      <CrumbProvider>
-        <section>
-          <ul>
-            <CrumbConsumer>
-              {({ gistList }) => gistList.map(gist => <ListItem gist={gist} />)}
-            </CrumbConsumer>
-          </ul>
-        </section>
-      </CrumbProvider>
-    );
-  }
-}
+const ListWrapper = () => (
+  <section>
+    <ul>
+      <CrumbContext>
+        {({ gistList }) => gistList.map(gist => <ListItem gist={gist} />)}
+      </CrumbContext>
+    </ul>
+  </section>
+);
+
+export default WithCrumbContext(ListWrapper);
