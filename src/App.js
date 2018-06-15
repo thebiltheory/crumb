@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       gistList: [],
-      user: 'thebiltheory',
+      user: 'gaearon',
       searchFormInput: '',
       searchUser: e => {
         this.getUserGists(e.target.value);
