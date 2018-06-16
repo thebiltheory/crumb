@@ -1,11 +1,8 @@
 'use strict';
 var precacheConfig = [
-    ['./crumb/index.html', '7746a98ab4860d2d7629a3617c9b4408'],
-    [
-      './crumb/static/css/main.f156cf1d.css',
-      '73e8395e6429cb06e8c74f609c3fee58'
-    ],
-    ['./crumb/static/js/main.653e9be0.js', '9e14ff17c5b0f8141c5a1da56bdeeb47']
+    ['/crumb/index.html', '3f1cca58e90a38e4f990da4a251e07c4'],
+    ['/crumb/static/css/main.f156cf1d.css', '73e8395e6429cb06e8c74f609c3fee58'],
+    ['/crumb/static/js/main.ae9fd4f9.js', 'c29e780134395247ad4531b13c5cac78']
   ],
   cacheName =
     'sw-precache-v3-sw-precache-webpack-plugin-' +
@@ -150,7 +147,7 @@ self.addEventListener('install', function(e) {
         r = 'index.html';
       (e = urlsToCacheKeys.has(n)) ||
         ((n = addDirectoryIndex(n, r)), (e = urlsToCacheKeys.has(n)));
-      var a = './crumb/index.html';
+      var a = '/crumb/index.html';
       !e &&
         'navigate' === t.request.mode &&
         isPathWhitelisted(['^(?!\\/__).*'], t.request.url) &&

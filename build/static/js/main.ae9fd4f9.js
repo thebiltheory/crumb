@@ -29,7 +29,7 @@
     (t.o = function(e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (t.p = './crumb/'),
+    (t.p = '/crumb/'),
     t((t.s = 34));
 })([
   function(e, t, n) {
@@ -27597,11 +27597,11 @@
     function r() {
       if ('serviceWorker' in navigator) {
         if (
-          new URL('./crumb', window.location).origin !== window.location.origin
+          new URL('/crumb', window.location).origin !== window.location.origin
         )
           return;
         window.addEventListener('load', function() {
-          var e = './crumb/service-worker.js';
+          var e = '/crumb/service-worker.js';
           o
             ? (a(e),
               navigator.serviceWorker.ready.then(function() {
@@ -27659,4 +27659,4 @@
     );
   }
 ]);
-//# sourceMappingURL=main.653e9be0.js.map
+//# sourceMappingURL=main.ae9fd4f9.js.map
