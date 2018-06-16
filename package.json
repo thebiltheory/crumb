@@ -12,7 +12,7 @@
     "react-scripts": "1.1.4",
     "rmwc": "^1.7.0"
   },
-  "homepage": "./crumb",
+  "homepage": "http://thebiltheory.github.io/crumb",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
