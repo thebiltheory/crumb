@@ -8,8 +8,8 @@ import { getUserGistList, getUserProfileFor } from './services/github';
 import { Grid, GridCell } from 'rmwc/Grid';
 import { Typography } from 'rmwc/Typography';
 import { LinearProgress } from 'rmwc/LinearProgress';
-import CrumbLogo from './components/Logo/Logo';
 import CrumbHeader from './components/CrumbHeader/CrumbHeader';
+import debounce from 'lodash.debounce';
 
 /**
  * Only imports styles for the Button component.
@@ -21,6 +21,7 @@ import '@material/card/dist/mdc.card.min.css';
 import '@material/linear-progress/dist/mdc.linear-progress.min.css';
 import '@material/typography/dist/mdc.typography.min.css';
 import '@material/button/dist/mdc.button.min.css';
+import { config } from './crumb-config';
 
 export const CrumbContext = React.createContext();
 
@@ -29,16 +30,24 @@ class App extends Component {
     super(props);
     this.state = {
       gistList: [],
-      user: 'gaearon',
+      user: config.default_user,
       userProfile: {},
       searchFormInput: '',
-      searchUser: e => {
-        this.getUserGists(e.target.value);
+      searchUser: function searchUser(e) {
+        e.persist();
+
+        /**
+         * Delay the Gist List fetch
+         */
+        const request = debounce(
+          () => this.getUserGists(e.target.value),
+          2000
+        )();
 
         this.setState({
           searchFormInput: e.target.value
         });
-      }
+      }.bind(this)
     };
   }
 

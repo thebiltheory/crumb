@@ -15,7 +15,7 @@ const AxiosConfig = {
  * Retrieve a list of gist from a user
  * @param {string} user
  */
-export const getUserGistList = async (user = 'gaearon') => {
+export const getUserGistList = async (user = config.default_user) => {
   const github = Axios.create({
     baseURL: `${config.githubApi}/users/${user}`,
     ...AxiosConfig
@@ -46,7 +46,7 @@ export const getForks = async url => {
   }
 };
 
-export const getUserProfileFor = async (user = 'gaearon') => {
+export const getUserProfileFor = async (user = config.default_user) => {
   const gist = Axios.create({
     baseURL: `${config.githubApi}/users/`,
     ...AxiosConfig
