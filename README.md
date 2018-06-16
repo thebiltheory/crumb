@@ -7,6 +7,8 @@ Intersperse code crumbs.
 A React based Single Page Application retrieving a list of gist from the Github API.
 Gist are more like little code crumbs you leave here and there.
 
+[DEMO](https://crumb.netlify.com/)
+
 ### Prerequisites
 
 The right environment.
