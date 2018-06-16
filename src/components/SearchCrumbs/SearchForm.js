@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import WithCrumbContext from '../WithCrumbContext/WithCrumbContext';
 import { CrumbContext } from '../../App';
 import { debounce } from 'lodash.debounce';
+import { TextField } from 'rmwc/TextField';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -24,13 +25,15 @@ class SearchForm extends Component {
       <CrumbContext.Consumer>
         {({ user, searchUser, searchFormInput }) => (
           <form>
-            <input
-              searchforminput={searchFormInput}
-              type="text"
-              name="user"
-              value={this.state.fieldValue}
-              placeholder={user}
+            <TextField
+              withLeadingIcon="search"
+              style={{ width: '100%' }}
               onChange={searchUser}
+              outlined
+              value={this.state.fieldValue}
+              label="Crumbs of .."
+              searchforminput={searchFormInput}
+              placeholder={user}
             />
           </form>
         )}

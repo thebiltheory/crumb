@@ -1,16 +1,21 @@
 import React from 'react';
-import ListItem from '../ListItem/ListItem';
+import GistItem from '../GistItem/GistItem';
 import WithCrumbContext from '../WithCrumbContext/WithCrumbContext';
 import { CrumbContext } from '../../App';
+import { List } from 'rmwc/List';
+
+import { Card } from 'rmwc/Card';
 
 const ListWrapper = () => (
-  <section>
-    <ul>
+  <Card outlined>
+    <List twoLine tag="ul">
       <CrumbContext>
-        {({ gistList }) => gistList.map(gist => <ListItem gist={gist} />)}
+        {({ gistList }) =>
+          gistList.map(gist => <GistItem key={gist.node_id} gist={gist} />)
+        }
       </CrumbContext>
-    </ul>
-  </section>
+    </List>
+  </Card>
 );
 
 export default WithCrumbContext(ListWrapper);

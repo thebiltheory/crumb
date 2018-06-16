@@ -24,7 +24,6 @@ export const getUserGistList = async (user = 'gaearon') => {
   try {
     const gists = await github.get('/gists');
     const list = gists.data;
-    console.log(list);
     return {
       list
     };
@@ -44,5 +43,19 @@ export const getForks = async url => {
     return forks.data;
   } catch (error) {
     console.warn(`Failed fetching forks, ${error} `);
+  }
+};
+
+export const getUserProfileFor = async (user = 'gaearon') => {
+  const gist = Axios.create({
+    baseURL: `${config.githubApi}/users/`,
+    ...AxiosConfig
+  });
+
+  try {
+    const profile = await gist.get(`/${user}`);
+    return profile.data;
+  } catch (error) {
+    console.warn(`Failed fetching profile '${user}', ${error} `);
   }
 };

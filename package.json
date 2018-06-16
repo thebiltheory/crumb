@@ -5,8 +5,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "lodash.debounce": "^4.0.8",
+    "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
     "react-scripts": "1.1.4",
     "rmwc": "^1.7.0"
   },
