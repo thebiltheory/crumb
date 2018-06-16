@@ -12,11 +12,9 @@
     "react-scripts": "1.1.4",
     "rmwc": "^1.7.0"
   },
-  "homepage": "http://thebiltheory.github.io/crumb",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "mv build docs",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "precommit": "pretty-quick --staged"
