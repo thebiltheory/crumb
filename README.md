@@ -73,5 +73,3 @@ A 24h Challenge is hard to TDD.
 ## Authors
 
 - **Bil Benhamou** - [Twitter](https://twitter.com/thebiltheory)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
